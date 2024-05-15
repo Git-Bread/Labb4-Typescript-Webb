@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="utf-8">
+        <title>Labb 4</title>
+        <meta name="description" content="Labboration 4">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Webbutväckling - Ramschema</h1>
+        <div>
+            <label>Sök:<br></label>
+            <input type="text" id="search-field">
+        </div>
+        <table id="content">
+            <thead>
+                <td>Kurskod:</td>
+                <td>Namn:</td>
+                <td>Progression:</td>
+            </thead>
+            <tbody *ngFor="let code of content; let i = index">
+                <td>{{content[i].code}}</td>
+                <td>{{content[i].coursename}}</td>
+                <td>{{content[i].progression}}</td>
+            </tbody>
+        </table>
+    </body>
+</html>
