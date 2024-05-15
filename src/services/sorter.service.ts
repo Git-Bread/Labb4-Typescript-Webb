@@ -20,5 +20,11 @@ export class SorterService {
             break;
     }
     return simpleSort;
+  }
+  public searchSort(search : string, obj: Obj[]) {
+    let searchSort = obj;
+    console.log(search);
+    searchSort = searchSort.filter((a) => a.code.toLowerCase().includes(search.toLowerCase()) || a.coursename.toLowerCase().includes(search.toLowerCase()) || a.progression.toLowerCase().includes(search.toLowerCase()));
+    return searchSort;
 }
 }

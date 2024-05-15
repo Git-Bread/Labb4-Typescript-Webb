@@ -2,8 +2,10 @@
     <body>
         <h1>Webbutväckling - Ramschema</h1>
         <div>
-            <label>Sök:<br></label>
-            <input type="text" id="search-field">
+            <form [formGroup]="formHandle">
+                <label>Sök:<br></label>
+                <input type="text" id="search-field" formControlName="input" (input)="search()" value={{formHandle.value.input}}>
+            </form>
         <table id="content">
             <thead>
                 <td (click)="sort(0)">Kurskod:</td>
@@ -16,4 +18,3 @@
                 <td>{{content[i].progression}}</td>
             </tbody>
         </table>
-<!--(input)="searchSort(this.value)-->
